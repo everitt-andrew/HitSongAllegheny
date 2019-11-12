@@ -1,6 +1,7 @@
 #import statements
 import csv
 import spotipy
+import json
 
 file = "../data/musiclist.csv"
 
@@ -12,7 +13,7 @@ with open(file, 'rb') as f:
         for row in reader:
             print(row)
     except csv.Error as e:
-        sys.exit('file %s, line %d: %s' % (filename, reader.line_num, e))
+        sys.exit('file %s, line %d: %s' % (file, reader.line_num, e))
 
 
 #writing to setup csv file
@@ -23,15 +24,46 @@ with open(file, 'w') as csvfile:
 #connecting to the spotify web API and retrieving data
 spotify = spotipy.Spotify()
 
-#parse each row for url
+#parse each song (row) for url
 for(int i = 0; i < rows; i++){
     id = reader['url']
-
-    #retrive nine other parameters
+    #begin to retrive nine other variables
     results = spotify.audio_analysis(id);
 
-    #writing results to csv file
-    
+    #writes terminal output to json file
+    with open('data.json', 'w') as f:
+        json.dump(data, f)
+
+    #parsing through each variable in json file
+    #genre
+    row[6] =
+
+    #length
+    row[7] =
+
+    #explicit
+    row[8] =
+
+    #loudness
+    row[9] =
+
+    #loudness confidence
+    row[10] =
+
+    #tempo
+    row[11] =
+
+    #tempo confidence
+    row[12] =
+
+    #key
+    row[13] =
+
+    #key confidence
+    row[14] =
+
+    #writing all results to csv file
+    writer.writerow(row)
 
 }
 
