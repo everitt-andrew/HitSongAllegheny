@@ -8,14 +8,12 @@ file = "../data/musiclist.csv"
 with open(file, 'rb') as f:
     reader = csv.reader(f)
     try:
+        #testing csv is read correctly
         for row in reader:
+            print(row)
     except csv.Error as e:
         sys.exit('file %s, line %d: %s' % (filename, reader.line_num, e))
 
-#testing csv is read correctly
-for(int i = 0; i < 100; i++){
-    print()
-}
 
 #writing to setup csv file
 with open(file, 'w') as csvfile:
@@ -27,15 +25,22 @@ spotify = spotipy.Spotify()
 
 #parse each row for url
 for(int i = 0; i < rows; i++){
-id = reader['url'];
+    id = reader['url']
 
-#retrive nine other parameters
-results = spotify.audio_analysis(id);
+    #retrive nine other parameters
+    results = spotify.audio_analysis(id);
 
-#writing results to csv file
-
+    #writing results to csv file
+    
 
 }
 
 
 #testing csv is updated correctly
+with open(file, 'rb') as f:
+    reader = csv.reader(f)
+    try:
+        for row in reader:
+            print(row)
+    except csv.Error as e:
+        sys.exit('file %s, line %d: %s' % (filename, reader.line_num, e))
