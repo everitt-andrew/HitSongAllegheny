@@ -14,7 +14,7 @@ with open(file, 'rb') as f:
 
 #testing csv is read correctly
 for(int i = 0; i < 100; i++){
-    
+    print()
 }
 
 #writing to setup csv file
@@ -23,7 +23,19 @@ with open(file, 'w') as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
 #connecting to the spotify web API and retrieving data
+spotify = spotipy.Spotify()
+
+#parse each row for url
+for(int i = 0; i < rows; i++){
+id = reader['url'];
+
+#retrive nine other parameters
+results = spotify.audio_analysis(id);
 
 #writing results to csv file
+
+
+}
+
 
 #testing csv is updated correctly
