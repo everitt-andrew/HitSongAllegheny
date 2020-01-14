@@ -16,4 +16,16 @@ with open(file, 'rb') as f:
         sys.exit('file %s, line %d: %s' % (file, reader.line_num, e))
 
 #neural network settings
-solver='adam'
+variables = ["Artist popularity", "Genre", "Length", "Loudness", "Tempo", "Key"]
+clf = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(5, 2), random_state=1)
+
+#algorithm training
+X = [[0., 0.], [1., 1.]]
+y = [0, 1]
+clf.fit(X, y)
+
+#prediction algorithm
+clf.predict([[2., 2.], [-1., -2.]])
+array([1, 0])
+
+#output
