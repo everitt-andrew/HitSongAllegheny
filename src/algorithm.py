@@ -2,6 +2,7 @@
 import csv
 from sklearn.neural_networkimport MLPClassifier
 import matplotlib
+import sys
 
 file = "../data/musiclist.csv"
 
@@ -29,3 +30,4 @@ clf.predict([[2., 2.], [-1., -2.]])
 array([1, 0])
 
 #output
+plt.show()
