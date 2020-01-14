@@ -3,6 +3,8 @@ import csv
 from sklearn.neural_networkimport MLPClassifier
 import matplotlib
 import sys
+import spotipy
+import json
 
 file = "../data/musiclist.csv"
 
@@ -24,6 +26,8 @@ clf = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(5, 2), rando
 X = [[0., 0.], [1., 1.]]
 y = [0, 1]
 clf.fit(X, y)
+
+#retriving song data
 
 #prediction algorithm
 clf.predict([[2., 2.], [-1., -2.]])
