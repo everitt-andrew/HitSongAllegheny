@@ -18,7 +18,7 @@ with open(file, 'rb') as f:
 
 #writing to setup csv file
 with open(file, 'w') as csvfile:
-    fieldnames = ['week', 'position', 'title', 'artist', 'features', 'url', 'genre', 'length', 'explicit', 'loudness', 'l_confidence', 'tempo', 't_confidence', 'key', 'k_confidence']
+    fieldnames = ['week', 'position', 'title', 'artist', 'features', 'url', 'release_date', 'date_difference', 'length', 'explicit', 'loudness', 'l_confidence', 'tempo', 't_confidence', 'key', 'k_confidence']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
 #connecting to the spotify web API and retrieving data
@@ -28,39 +28,37 @@ spotify = spotipy.Spotify()
 for(int i = 0; i < rows; i++){
     id = reader['url']
     #begin to retrive nine other variables
-    results = spotify.audio_analysis(id);
+    data = spotify.audio_analysis(id)
 
     #writes terminal output to json file
     with open('data.json', 'w') as f:
         json.dump(data, f)
 
     #parsing through each variable in json file
-    #genre
-    row[6] =
 
     #length
-    row[7] =
+    row[6] =
 
     #explicit
-    row[8] =
+    row[7] =
 
     #loudness
-    row[9] =
+    row[8] =
 
     #loudness confidence
-    row[10] =
+    row[9] =
 
     #tempo
-    row[11] =
+    row[10] =
 
     #tempo confidence
-    row[12] =
+    row[11] =
 
     #key
-    row[13] =
+    row[12] =
 
     #key confidence
-    row[14] =
+    row[13] =
 
     #writing all results to csv file
     writer.writerow(row)
