@@ -1,29 +1,26 @@
-barplot(projectdata$Population.Density, 
-        ylim = c(0, 1300),
-        names.arg = projectdata$State, 
+barplot(unique(Data$Followers), 
+        names.arg = unique(Data$Artist), 
         las = 2,
-        cex.names = 0.6,main = "Graph 1: Artist Following")
+        cex.names = 0.25)
 
-plot(projectdata$High.School..,projectdata$Population.Density,main = "Graph 2: Echo Nest BPM versus Spotify API Tempo",xlab="Percentage of People with High School Education or Higher ", ylab="Population Density")
+plot(Data$Tempo,Data$BPM, xlab="Tempo (Spotify)", ylab="Beats Per Minute (The Echo Nest)")
 
-plot(projectdata$Bachelor.s.Degree..,projectdata$Population.Density,main = "Graph 3: Trend in BPM Over Time",xlab="Percentage of People with Four Year College Education or Higher ", ylab="Population Density")
+plot(as.Date(Data2$Release.date, format = "%m/%d/%Y"), Data2$Tempo, xlab="Release Date", ylab="Tempo in BPM")
 
-plot(projectdata$Population.Density,projectdata$Median.Income,main = "Graph 4: Echo Nest versus Spotify API: Loudness",xlab="Population Density", ylab="Median Income")
+plot(Data$Noise,Data$Loudness, xlab="Spotify Value", ylab="The Echo Nest Value")
 
-plot(projectdata$Poverty,projectdata$Population.Density,main = "Graph 5: Trend in Loudness Over Time",xlab="Percentage of Impoverished People", ylab="Population Density")
+plot(as.Date(Data2$Release.date, format = "%m/%d/%Y"), Data2$Noise, xlab="Release Date", ylab="Loudness")
 
-barplot(projectdata$Population.Density, 
-        ylim = c(0, 1300),
-        names.arg = projectdata$State, 
-        las = 2,
-        cex.names = 0.6,main = "Graph 6: Key Frequency")
+barplot(table(Data$Key), xlab="Key Value", ylab="Frequency")
 
-plot(projectdata$Without.health.insurance,projectdata$Population.Density,main = "Graph 7: Time from Release to Charting",xlab="Percentage of People Without Health Insurance", ylab="Population Density")
+plot(as.Date(Data2$Release.date, format = "%m/%d/%Y"), Data2$Weeks.until.appearance, xlab="Release Date", ylab="Weeks Until Reaching Top 10")
 
-plot(projectdata$Non.white,projectdata$Population.Density,main = "Graph 8: Trend in Danceability Over Time",xlab="Percentage of Non-White People", ylab="Population Density")
+plot(as.Date(Data2$Release.date, format = "%m/%d/%Y"), Data2$Danceability, xlab="Release Date", ylab="Danceability")
 
-plot(projectdata$Non.white,projectdata$Population.Density,main = "Graph 9: Trend in Energy Over Time",xlab="Percentage of Non-White People", ylab="Population Density")
+plot(as.Date(Data2$Release.date, format = "%m/%d/%Y"), Data2$Energy, xlab="Release Date", ylab="Energy")
 
-plot(projectdata$Non.white,projectdata$Population.Density,main = "Graph 10: Trend in Valence Over Time",xlab="Percentage of Non-White People", ylab="Population Density")
+plot(as.Date(Data2$Release.date, format = "%m/%d/%Y"), Data2$Valence, xlab="Release Date", ylab="Valence")
 
-plot(projectdata$Non.white,projectdata$Population.Density,main = "Graph 11: Trend in Song Length Over Time",xlab="Percentage of Non-White People", ylab="Population Density")
+plot(as.Date(Data2$Release.date, format = "%m/%d/%Y"), Data2$Seconds, xlab="Release Date", ylab="Length in Seconds")
+
+plot(as.Date(Data2$Release.date, format = "%m/%d/%Y"), Data2$Key, xlab="Release Date", ylab="Key")
