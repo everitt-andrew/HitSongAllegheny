@@ -10,7 +10,7 @@ Once RStudio has been installed, ensure that the version is at least 3.6.2, the
 version in which the project was developed. Future versions may affect the usability
 of some commands.
 
-The code can be found in the src directory. After it has been opened, the user must
+The code can be found in the src directory (analysis.r). After it has been opened, the user must
 download the tidyverse package by typing the command "Install.packages("tidyverse")"
 into the console. Furthermore, after the operation has been completed, the user must
 activate the package by entering the command "library(tidyverse)" into the console.
