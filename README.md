@@ -2,7 +2,7 @@
 Official repository for data and source code for Andrew C. Everitt's thesis project.
 
 ## Usage
-Please download RStudio [!here](https://cran.r-project.org/mirrors.html) if you
+Please download RStudio [here](https://cran.r-project.org/mirrors.html) if you
 haven't done so already and then follow the instructions to install once opening
 the file.
 
